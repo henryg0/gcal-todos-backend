@@ -15,9 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from . import views
+from todoApp.views import task_views
+from todoApp.views.user_views import UserView
+from todoApp.views.task_views import TaskView
+
+task_view = TaskView.as_view()
+user_view = UserView.as_view()
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
-    path('', views.index, name='idx')
+    # task paths
+    path('tasks', task_view, name='post'),
+    path('tasks/<int:userId>', task_view, name='get'),
+    # user paths
+    path('users', user_view, name='post'),
+    path('users/<int:userId>', user_view, name='get'),
 ]

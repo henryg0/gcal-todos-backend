@@ -1,0 +1,23 @@
+# Ignore compiled Python files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Ignore migrations (can be regenerated)
+todoApp/migrations/
+
+# Ignore temporary files from IDEs
+.idea/
+.vscode/
+
+# Ignore environment files (e.g., virtual environments)
+env/
+venv/
+
+# Ignore database files (if applicable)
+*.sqlite3
+
+# Ignore settings if sensitive (e.g., API keys, passwords)
+todoServer/settings.py
+todoServer/__pycache*
